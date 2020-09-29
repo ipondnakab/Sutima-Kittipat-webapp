@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Sutima-Kittipat-webapp/static/css/main.28147bb3.chunk.css",
-    "main.js": "/Sutima-Kittipat-webapp/static/js/main.3e39a01d.chunk.js",
-    "main.js.map": "/Sutima-Kittipat-webapp/static/js/main.3e39a01d.chunk.js.map",
-    "runtime-main.js": "/Sutima-Kittipat-webapp/static/js/runtime-main.e1a4823c.js",
-    "runtime-main.js.map": "/Sutima-Kittipat-webapp/static/js/runtime-main.e1a4823c.js.map",
-    "static/js/2.6c89d746.chunk.js": "/Sutima-Kittipat-webapp/static/js/2.6c89d746.chunk.js",
-    "static/js/2.6c89d746.chunk.js.map": "/Sutima-Kittipat-webapp/static/js/2.6c89d746.chunk.js.map",
-    "index.html": "/Sutima-Kittipat-webapp/index.html",
-    "precache-manifest.e5587376b116ae72922b0ac6496c875d.js": "/Sutima-Kittipat-webapp/precache-manifest.e5587376b116ae72922b0ac6496c875d.js",
-    "service-worker.js": "/Sutima-Kittipat-webapp/service-worker.js",
-    "static/css/main.28147bb3.chunk.css.map": "/Sutima-Kittipat-webapp/static/css/main.28147bb3.chunk.css.map",
-    "static/js/2.6c89d746.chunk.js.LICENSE.txt": "/Sutima-Kittipat-webapp/static/js/2.6c89d746.chunk.js.LICENSE.txt",
-    "static/media/bg2.jpg": "/Sutima-Kittipat-webapp/static/media/bg2.2f46140e.jpg",
-    "static/media/logo.svg": "/Sutima-Kittipat-webapp/static/media/logo.5d5d9eef.svg",
-    "static/media/man.svg": "/Sutima-Kittipat-webapp/static/media/man.ef68baee.svg"
+    "main.css": "/static/css/main.28147bb3.chunk.css",
+    "main.js": "/static/js/main.29eb2831.chunk.js",
+    "main.js.map": "/static/js/main.29eb2831.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6d5d5a0a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6d5d5a0a.js.map",
+    "static/js/2.6c89d746.chunk.js": "/static/js/2.6c89d746.chunk.js",
+    "static/js/2.6c89d746.chunk.js.map": "/static/js/2.6c89d746.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c3bd62564e627593f29641f4ac08984c.js": "/precache-manifest.c3bd62564e627593f29641f4ac08984c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.28147bb3.chunk.css.map": "/static/css/main.28147bb3.chunk.css.map",
+    "static/js/2.6c89d746.chunk.js.LICENSE.txt": "/static/js/2.6c89d746.chunk.js.LICENSE.txt",
+    "static/media/bg2.jpg": "/static/media/bg2.2f46140e.jpg",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg",
+    "static/media/man.svg": "/static/media/man.ef68baee.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e1a4823c.js",
+    "static/js/runtime-main.6d5d5a0a.js",
     "static/js/2.6c89d746.chunk.js",
     "static/css/main.28147bb3.chunk.css",
-    "static/js/main.3e39a01d.chunk.js"
+    "static/js/main.29eb2831.chunk.js"
   ]
 }
