@@ -1,0 +1,10 @@
+.bts1 {
+  padding: 8px 12px;
+  border-radius: 12px;
+  background-color: royalblue;
+  cursor: pointer;
+}
+
+.bts1 > p {
+  margin: 0;
+}
