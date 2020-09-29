@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ipondnakab/Sutima-Kittipat-webapp/static/css/main.28147bb3.chunk.css",
+    "main.js": "/ipondnakab/Sutima-Kittipat-webapp/static/js/main.bba89286.chunk.js",
+    "main.js.map": "/ipondnakab/Sutima-Kittipat-webapp/static/js/main.bba89286.chunk.js.map",
+    "runtime-main.js": "/ipondnakab/Sutima-Kittipat-webapp/static/js/runtime-main.ffa2ea5f.js",
+    "runtime-main.js.map": "/ipondnakab/Sutima-Kittipat-webapp/static/js/runtime-main.ffa2ea5f.js.map",
+    "static/js/2.6c89d746.chunk.js": "/ipondnakab/Sutima-Kittipat-webapp/static/js/2.6c89d746.chunk.js",
+    "static/js/2.6c89d746.chunk.js.map": "/ipondnakab/Sutima-Kittipat-webapp/static/js/2.6c89d746.chunk.js.map",
+    "index.html": "/ipondnakab/Sutima-Kittipat-webapp/index.html",
+    "precache-manifest.10c64e6291bd8927d7a6450df6c28350.js": "/ipondnakab/Sutima-Kittipat-webapp/precache-manifest.10c64e6291bd8927d7a6450df6c28350.js",
+    "service-worker.js": "/ipondnakab/Sutima-Kittipat-webapp/service-worker.js",
+    "static/css/main.28147bb3.chunk.css.map": "/ipondnakab/Sutima-Kittipat-webapp/static/css/main.28147bb3.chunk.css.map",
+    "static/js/2.6c89d746.chunk.js.LICENSE.txt": "/ipondnakab/Sutima-Kittipat-webapp/static/js/2.6c89d746.chunk.js.LICENSE.txt",
+    "static/media/bg2.jpg": "/ipondnakab/Sutima-Kittipat-webapp/static/media/bg2.2f46140e.jpg",
+    "static/media/logo.svg": "/ipondnakab/Sutima-Kittipat-webapp/static/media/logo.5d5d9eef.svg",
+    "static/media/man.svg": "/ipondnakab/Sutima-Kittipat-webapp/static/media/man.ef68baee.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ffa2ea5f.js",
+    "static/js/2.6c89d746.chunk.js",
+    "static/css/main.28147bb3.chunk.css",
+    "static/js/main.bba89286.chunk.js"
+  ]
+}
