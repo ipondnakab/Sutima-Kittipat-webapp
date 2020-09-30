@@ -1,5 +1,8 @@
 import React from "react";
-import PostComponent from "../../components/PostComponent";
+import loginRegister from "../../assets/images/logo-Register.svg";
+import logoFacebook  from "../..assets/images/facebook.png";
+import logoGoogle from "../..assets/images/google.svg";
+
 
 function RegisterPage(){
     return(
@@ -7,7 +10,7 @@ function RegisterPage(){
         
         <div class="left-coloumn">
             <h1>Logo</h1>
-            <img src="./images/logo (2).png" width="400px" alt="logo"/>
+            <img src={loginRegister} width="400px" alt="logo"/>
             <h3>That is your market</h3>
 
         </div>
@@ -19,7 +22,7 @@ function RegisterPage(){
 
                 <form action="" class="form">
                         <label for="name"><b>Username</b></label>
-                        <input type="name" placeholder="Username" name="name" required/>
+                        <input type="text" placeholder="Username" name="name" required/>
                         <label for="uname"><b>Email address</b></label>
                         <input type="text" placeholder="Email address" name="uname" required/>
                         <label for="psw"><b>Password</b></label>
@@ -35,8 +38,8 @@ function RegisterPage(){
             <h2>Use social sign in</h2>
 
             <div class="logo">
-                <img src="./images/google.png" width="50px" alt= "blogo"/>
-                <img src="./images/facebook.png" width="50px" alt= "gg"/>
+                <img src= {logoGoogle} width="50px" alt= "blogo"/>
+                <img src= {logoFacebook} width="50px" alt= "gg"/>
             </div>
 
             <span class="rgt">If you have account<a href="#">Login</a></span>
