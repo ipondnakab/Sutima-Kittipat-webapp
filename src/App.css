@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.button-style-1 {
+  padding: 8px 12px;
+  border-radius: 12px;
+  background-color: royalblue;
+  color: white;
+  text-decoration: none;
+}

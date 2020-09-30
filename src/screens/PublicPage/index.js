@@ -1,5 +1,5 @@
 import React from "react";
-import PostComponent from "../components/PostComponent";
+import PostComponent from "../../components/PostComponent";
 
 function PublicPage() {
   let tem = [
