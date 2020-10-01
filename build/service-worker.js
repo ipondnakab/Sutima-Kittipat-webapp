@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Sutima-Kittipat-webapp/precache-manifest.daf600c7b37bc49ec3c256b26b1ed1c1.js"
+  "/Sutima-Kittipat-webapp/precache-manifest.9961bc3aff8984aa07d7c46477b716b3.js"
 );
 
 self.addEventListener('message', (event) => {

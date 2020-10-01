@@ -1,8 +1,8 @@
 import React from "react";
 import "./login-page.css";
 import logoLoginPage from "../../assets/images/logo-login.svg";
-import logoFacebook  from "../..assets/images/facebook.png";
-import logoGoogle from "../..assets/images/google.svg";
+import logoGoogle from "../../assets/images/google.svg";
+// import logoFacebook  from "../../assets/images/facebook.png";
 
 function LoginPage() {
     return (
@@ -40,8 +40,8 @@ function LoginPage() {
                 <h2>Use social sign in</h2>
 
                 <div class="logo">
-                    <img src= {logoGoogle} width="50px" alt="blogo" />
-                    <img src= {logoFacebook} width="50px" alt="gg" />
+                    <img src={logoGoogle} width="50px" alt="blogo" />
+                    {/* <img src={logoFacebook} width="50px" alt="gg" /> */}
                 </div><br />
                 <span class="rgt">If you don't have account<a href="#"> Register</a></span>
             </div>

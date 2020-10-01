@@ -1,7 +1,7 @@
 import React from "react";
-import loginRegister from "../../assets/images/logo-Register.svg";
-import logoFacebook  from "../..assets/images/facebook.png";
-import logoGoogle from "../..assets/images/google.svg";
+// import loginRegister from "../../assets/images/logo-Register.svg";
+// import logoFacebook  from "../..assets/images/facebook.png";
+// import logoGoogle from "../..assets/images/google.svg";
 
 
 function RegisterPage(){
@@ -10,7 +10,7 @@ function RegisterPage(){
         
         <div class="left-coloumn">
             <h1>Logo</h1>
-            <img src={loginRegister} width="400px" alt="logo"/>
+            <img src="../../assets/images/logo-Register.svg" width="400px" alt="logo"/>
             <h3>That is your market</h3>
 
         </div>
@@ -38,8 +38,8 @@ function RegisterPage(){
             <h2>Use social sign in</h2>
 
             <div class="logo">
-                <img src= {logoGoogle} width="50px" alt= "blogo"/>
-                <img src= {logoFacebook} width="50px" alt= "gg"/>
+                {/* <img src= {logoGoogle} width="50px" alt= "blogo"/> */}
+                {/* <img src= {logoFacebook} width="50px" alt= "gg"/> */}
             </div>
 
             <span class="rgt">If you have account<a href="#">Login</a></span>
