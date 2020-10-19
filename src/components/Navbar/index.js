@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function Navbar({ menu }) {
   menu = menu === undefined ? true : menu;
@@ -10,7 +11,9 @@ function Navbar({ menu }) {
         style={{ justifyContent: menu ? "space-between" : "start" }}
       >
         <div className="left-nav">
-          <h1>Logo</h1>
+          <Link className={"logo"} to="/">
+            <h1>Logo</h1>
+          </Link>
         </div>
         <div className="right-nav" style={{ display: menu ? "flex" : "none" }}>
           {menu ? menu : null}

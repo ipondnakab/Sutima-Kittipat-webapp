@@ -23,6 +23,11 @@
   margin-left: 22px;
 }
 
+.nav-bar .nav .left-nav a {
+  color: white;
+  text-decoration: none;
+}
+
 .nav-bar .nav .right-nav {
   margin-right: 22px;
 }

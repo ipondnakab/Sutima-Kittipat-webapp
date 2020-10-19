@@ -19,6 +19,10 @@ $panding: 22px;
         color: white;
         .left-nav {
             margin-left: $panding;
+            a {
+                color: white;
+                text-decoration: none;
+            }
         }
         .right-nav {
             margin-right: $panding;
