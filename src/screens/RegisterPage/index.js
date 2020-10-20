@@ -4,12 +4,12 @@ import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 
 function RegisterPage() {
-    const responseGoogle = (res) => {
-        console.log(res);
-      };
-      const responseFacebook = (response) => {
-        console.log(response);
-      };
+  const responseGoogle = (res) => {
+    console.log(res);
+  };
+  const responseFacebook = (response) => {
+    console.log(response);
+  };
   return (
     <div class="column">
       <div class="left-coloumn">
@@ -47,7 +47,9 @@ function RegisterPage() {
             </label>
             <br />
 
-            <button class="button-submit" type="submit">Submit</button>
+            <button class="button-submit" type="submit">
+              Submit
+            </button>
             <br />
           </form>
         </div>
@@ -64,7 +66,7 @@ function RegisterPage() {
           />
           <FacebookLogin
             appId="364075804676399"
-            autoLoad={true}
+
             fields="name,email,picture"
             onClick={(data) => {
               console.warn(data);
@@ -73,7 +75,7 @@ function RegisterPage() {
           />
         </div>
 
-        <span class="rgt">
+        <span class="rst">
           If you have account<a href="#">Login</a>
         </span>
       </div>

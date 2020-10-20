@@ -3,14 +3,9 @@ import "./login-page.css";
 import * as images from "../../assets/images/images";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
+import { responseFacebook, responseGoogle } from "../../assets/functions/auth";
 
-function LoginPage() {
-  const responseGoogle = (res) => {
-    console.log(res);
-  };
-  const responseFacebook = (response) => {
-    console.log(response);
-  };
+function LoginPage({ setIsLogin }) {
   return (
     <div class="column">
       <div class="left-coloumn">
@@ -40,7 +35,9 @@ function LoginPage() {
 
             <input type="password" placeholder="Password" name="psw" required />
 
-            <button class="button-submit" type="submit">Login</button>
+            <button class="button-submit" type="submit">
+              Login
+            </button>
             <br />
 
             <div class="radio">
@@ -61,26 +58,27 @@ function LoginPage() {
         <div class="logo">
           <GoogleLogin
             clientId="964427814223-2p8jsupo987e8qfadkthalnh7m5q6up4.apps.googleusercontent.com"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
+            onSuccess={(response) => responseGoogle({ response, setIsLogin })}
+            onFailure={(err) => {
+              console.log(err);
+            }}
             cookiePolicy={"single_host_origin"}
-            style={{height: "100%"}}
-            
+            style={{ height: "100%" }}
           />
+
           <FacebookLogin
             appId="364075804676399"
-            autoLoad={true}
             fields="name,email,picture"
-            onClick={(data) => {
-              console.warn(data);
+            callback={(response) => responseFacebook({ response, setIsLogin })}
+            onFailure={(err) => {
+              console.log(err);
             }}
-            callback={responseFacebook}
           />
         </div>
 
-        <p class="rst">
-          If you don't have account<a href="#"> Register</a>
-        </p>
+        <span class="rst">
+          If you don't have account <a href="#">Register</a>
+        </span>
       </div>
     </div>
   );
