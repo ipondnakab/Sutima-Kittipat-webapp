@@ -1,12 +1,4 @@
-html{
-    font-family: 'Courier New', Courier, monospace;
-}
-*{
-    box-sizing: border-box;
-}
-body{
-    background-color: white;
-}
+
 .column{
     margin: 1%;
     width: auto;
@@ -29,14 +21,21 @@ img {
 
 .left-coloumn{
     margin: 1%;
-    width: 65%;
+    width: 40vw;
     padding: 10%;
     float: left;
     border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left-coloumn > h1 {
+    font-size: 4rem;
+    margin: 24px;
 }
 .right-column{
-    margin: 1%;
-    width: 65%;
+    width: 60vw;
     padding: 10%;
     float: left;
     border-radius: 50px;
@@ -46,7 +45,7 @@ h2{
     text-align: center;
 }
 
-input[type=text], input[type=password] {
+input[type=name],[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -56,7 +55,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
   
-button {
+.button-submit {
 
     border-radius: 50px;
     background-color: #4CAF50;
@@ -69,29 +68,24 @@ button {
     float: left;
 }
   
-button:hover {
+.button-submit:hover {
     opacity: 0.8;
-}
-span.psw {
-    float: right;
-    padding-top: 16px;
 }
 .form{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.radio{
+
+.radio { 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 h2{
     text-align: center;
 }
-span.rst{
-    text-align: right;
+span.rgt{
     float: center;
     padding-top: 16px;
 }
@@ -99,4 +93,12 @@ span.rst{
     margin: 1px;
     flex-direction: row;
     display: flex;
+}
+
+.logo > button, .logo > span > button { 
+    height: 100% !important;
+    padding: 0 16px !important;
+    margin-left: 12px;
+    font-size: 0.8rem !important;
+
 }

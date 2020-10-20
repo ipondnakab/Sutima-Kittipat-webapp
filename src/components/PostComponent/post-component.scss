@@ -19,15 +19,17 @@
         width: 90%;
         padding: 12px;
         > img {
-            height: 70%;
+            height: 100%;
             width: auto;
             margin-right: 12px;
+            margin-left: 0 !important;
         }
         > div {
             > h2 {
                 margin: 0;
                 width: fit-content;
-                font-weight: 300;
+                font-weight: 400;
+                font-size: 1rem;
             }
             > p {
                 margin: 0;
