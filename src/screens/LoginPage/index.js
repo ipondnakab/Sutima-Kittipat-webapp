@@ -7,19 +7,19 @@ import { responseFacebook, responseGoogle } from "../../assets/functions/auth";
 
 function LoginPage({ setIsLogin }) {
   return (
-    <div class="column">
-      <div class="left-coloumn">
+    <div className="column">
+      <div className="left-coloumn">
         <h1>Logo</h1>
         <img src={images.logoLogin} width="400px" alt="logo" />
         <p>That is your market</p>
       </div>
 
-      <div class="right-column">
-        <div class="login">
+      <div className="right-column">
+        <div className="login">
           <h2>Login with your e-mail</h2>
           <br />
 
-          <form action="" class="form">
+          <form action="" className="form">
             <label for="uname">
               <b>Email address</b>
             </label>
@@ -35,12 +35,12 @@ function LoginPage({ setIsLogin }) {
 
             <input type="password" placeholder="Password" name="psw" required />
 
-            <button class="button-submit" type="submit">
+            <button className="button-submit" type="submit">
               Login
             </button>
             <br />
 
-            <div class="radio">
+            <div className="radio">
               <label>
                 <input type="radio" id="checked" name="remember" /> Remember me
               </label>
@@ -55,7 +55,7 @@ function LoginPage({ setIsLogin }) {
         <h2>Or</h2>
         <h2>Use social sign in</h2>
 
-        <div class="logo">
+        <div className="logo">
           <GoogleLogin
             clientId="964427814223-2p8jsupo987e8qfadkthalnh7m5q6up4.apps.googleusercontent.com"
             onSuccess={(response) => responseGoogle({ response, setIsLogin })}
@@ -76,7 +76,7 @@ function LoginPage({ setIsLogin }) {
           />
         </div>
 
-        <span class="rst">
+        <span className="rst">
           If you don't have account <a href="#">Register</a>
         </span>
       </div>

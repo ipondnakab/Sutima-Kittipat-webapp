@@ -1,11 +1,5 @@
-import React, { Profiler, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useHistory,
-} from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { RiEarthLine, RiEarthFill } from "react-icons/ri";
 import { AiOutlineShop, AiFillShop } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
@@ -16,7 +10,6 @@ import Navbar from "./components/Navbar";
 import LoginPage from "./screens/LoginPage";
 import RegisterPage from "./screens/RegisterPage";
 import PublicPage from "./screens/PublicPage";
-import { ButtonS1 } from "./components/ButonStyle";
 
 //style
 import "./App.css";
@@ -33,7 +26,6 @@ export default function App() {
     setIsLogin(true);
   }
   const currentPath = window.location.pathname;
-  let history = useHistory();
 
   return (
     <Router>
@@ -41,7 +33,11 @@ export default function App() {
         <Navbar
           menu={
             isLogin
-              ? MenuNavbarOnLogin({ currentPath, setPath, setIsLogin, history })
+              ? MenuNavbarOnLogin({
+                  currentPath,
+                  setPath,
+                  setIsLogin,
+                })
               : MenuNavbar(isLogin)
           }
         />
@@ -64,7 +60,7 @@ export default function App() {
   );
 }
 
-const MenuNavbarOnLogin = ({ currentPath, setPath, setIsLogin, history }) => {
+const MenuNavbarOnLogin = ({ currentPath, setPath, setIsLogin }) => {
   const listMenu = [
     {
       name: "dashboard",
@@ -88,7 +84,7 @@ const MenuNavbarOnLogin = ({ currentPath, setPath, setIsLogin, history }) => {
       name: "logout",
       icon: <FiLogOut color="white" />,
       iconActive: <FiLogOut color="white" />,
-      path: "/",
+      path: "/login",
     },
   ];
 
@@ -106,14 +102,13 @@ const MenuNavbarOnLogin = ({ currentPath, setPath, setIsLogin, history }) => {
             to={item.path}
             onClick={() => {
               setPath(item.path);
-              if (item.name == "logout") {
+              if (item.name === "logout") {
                 logout({ setIsLogin });
-                window.location.pathname = "/login";
                 setPath("/login");
               }
             }}
           >
-            {currentPath.substring(0, item.path.length) == item.path
+            {currentPath.substring(0, item.path.length) === item.path
               ? item.iconActive
               : item.icon}
           </Link>
