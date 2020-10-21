@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Sutima-Kittipat-webapp/static/css/main.787cf801.chunk.css",
-    "main.js": "/Sutima-Kittipat-webapp/static/js/main.02cf3e82.chunk.js",
-    "main.js.map": "/Sutima-Kittipat-webapp/static/js/main.02cf3e82.chunk.js.map",
+    "main.css": "/Sutima-Kittipat-webapp/static/css/main.fbf5d2f8.chunk.css",
+    "main.js": "/Sutima-Kittipat-webapp/static/js/main.28cf4663.chunk.js",
+    "main.js.map": "/Sutima-Kittipat-webapp/static/js/main.28cf4663.chunk.js.map",
     "runtime-main.js": "/Sutima-Kittipat-webapp/static/js/runtime-main.e1a4823c.js",
     "runtime-main.js.map": "/Sutima-Kittipat-webapp/static/js/runtime-main.e1a4823c.js.map",
-    "static/js/2.e8a57d13.chunk.js": "/Sutima-Kittipat-webapp/static/js/2.e8a57d13.chunk.js",
-    "static/js/2.e8a57d13.chunk.js.map": "/Sutima-Kittipat-webapp/static/js/2.e8a57d13.chunk.js.map",
+    "static/js/2.2fa85feb.chunk.js": "/Sutima-Kittipat-webapp/static/js/2.2fa85feb.chunk.js",
+    "static/js/2.2fa85feb.chunk.js.map": "/Sutima-Kittipat-webapp/static/js/2.2fa85feb.chunk.js.map",
     "index.html": "/Sutima-Kittipat-webapp/index.html",
-    "precache-manifest.7844a7477fdee5f8d4ce5ebd0c8b43dd.js": "/Sutima-Kittipat-webapp/precache-manifest.7844a7477fdee5f8d4ce5ebd0c8b43dd.js",
+    "precache-manifest.93e4212ab05cbc95f6c9e88b9808bfe4.js": "/Sutima-Kittipat-webapp/precache-manifest.93e4212ab05cbc95f6c9e88b9808bfe4.js",
     "service-worker.js": "/Sutima-Kittipat-webapp/service-worker.js",
-    "static/css/main.787cf801.chunk.css.map": "/Sutima-Kittipat-webapp/static/css/main.787cf801.chunk.css.map",
-    "static/js/2.e8a57d13.chunk.js.LICENSE.txt": "/Sutima-Kittipat-webapp/static/js/2.e8a57d13.chunk.js.LICENSE.txt",
+    "static/css/main.fbf5d2f8.chunk.css.map": "/Sutima-Kittipat-webapp/static/css/main.fbf5d2f8.chunk.css.map",
+    "static/js/2.2fa85feb.chunk.js.LICENSE.txt": "/Sutima-Kittipat-webapp/static/js/2.2fa85feb.chunk.js.LICENSE.txt",
     "static/media/bg2.jpg": "/Sutima-Kittipat-webapp/static/media/bg2.2f46140e.jpg",
     "static/media/man.svg": "/Sutima-Kittipat-webapp/static/media/man.ef68baee.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.e1a4823c.js",
-    "static/js/2.e8a57d13.chunk.js",
-    "static/css/main.787cf801.chunk.css",
-    "static/js/main.02cf3e82.chunk.js"
+    "static/js/2.2fa85feb.chunk.js",
+    "static/css/main.fbf5d2f8.chunk.css",
+    "static/js/main.28cf4663.chunk.js"
   ]
 }
