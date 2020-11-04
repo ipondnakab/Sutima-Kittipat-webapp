@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import * as images from "../../assets/images/images";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
+import {
+  responseFacebook,
+  responseGoogle,
+  signUpWEP,
+} from "../../assets/functions/auth";
 
-function RegisterPage() {
-  const responseGoogle = (res) => {
-    console.log(res);
-  };
-  const responseFacebook = (response) => {
-    console.log(response);
+function RegisterPage(props) {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const register = (e) => {
+    e.preventDefault();
+    signUpWEP({ ...props, email, password });
   };
   return (
     <div class="column">
@@ -24,30 +30,43 @@ function RegisterPage() {
           <br />
 
           <form action="" class="form">
-            <label for="name">
+            <label for="username">
               <b>Username</b>
             </label>
-            <input type="text" placeholder="Username" name="name" required />
-            <label for="uname">
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <label for="email">
               <b>Email address</b>
             </label>
             <input
               type="text"
               placeholder="Email address"
-              name="uname"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <label for="psw">
               <b>Password</b>
             </label>
-            <input type="password" placeholder="Password" name="psw" required />
+            <input
+              type="password"
+              placeholder="Password"
+              name="psw"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
             <label>
               <input type="radio" id="check" name="remember" /> Remember me
             </label>
             <br />
 
-            <button class="button-submit" type="submit">
+            <button class="button-submit" type="submit" onClick={register}>
               Submit
             </button>
             <br />
@@ -60,18 +79,21 @@ function RegisterPage() {
         <div class="logo">
           <GoogleLogin
             clientId="964427814223-2p8jsupo987e8qfadkthalnh7m5q6up4.apps.googleusercontent.com"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
+            onSuccess={(response) => responseGoogle({ response, ...props })}
+            onFailure={(err) => {
+              console.log(err);
+            }}
             cookiePolicy={"single_host_origin"}
+            style={{ height: "100%" }}
           />
+
           <FacebookLogin
             appId="364075804676399"
-
             fields="name,email,picture"
-            onClick={(data) => {
-              console.warn(data);
+            callback={(response) => responseFacebook({ response, ...props })}
+            onFailure={(err) => {
+              console.log(err);
             }}
-            callback={responseFacebook}
           />
         </div>
 

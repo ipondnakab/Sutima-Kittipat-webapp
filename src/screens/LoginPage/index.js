@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login-page.css";
 import * as images from "../../assets/images/images";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
-import { responseFacebook, responseGoogle } from "../../assets/functions/auth";
+import {
+  responseFacebook,
+  responseGoogle,
+  signInWEP,
+} from "../../assets/functions/auth";
 
-function LoginPage({ setIsLogin }) {
+function LoginPage(props) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const login = (e) => {
+    e.preventDefault();
+    signInWEP({ email, password, ...props });
+  };
   return (
     <div className="column">
       <div className="left-coloumn">
@@ -20,22 +30,29 @@ function LoginPage({ setIsLogin }) {
           <br />
 
           <form action="" className="form">
-            <label for="uname">
+            <label for="email">
               <b>Email address</b>
             </label>
             <input
               type="text"
               placeholder="Email address"
-              name="uname"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <label for="psw">
+            <label for="password">
               <b>Password</b>
             </label>
 
-            <input type="password" placeholder="Password" name="psw" required />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
-            <button className="button-submit" type="submit">
+            <button className="button-submit" type="submit" onClick={login}>
               Login
             </button>
             <br />
@@ -58,7 +75,7 @@ function LoginPage({ setIsLogin }) {
         <div className="logo">
           <GoogleLogin
             clientId="964427814223-2p8jsupo987e8qfadkthalnh7m5q6up4.apps.googleusercontent.com"
-            onSuccess={(response) => responseGoogle({ response, setIsLogin })}
+            onSuccess={(response) => responseGoogle({ response, ...props })}
             onFailure={(err) => {
               console.log(err);
             }}
@@ -69,7 +86,7 @@ function LoginPage({ setIsLogin }) {
           <FacebookLogin
             appId="364075804676399"
             fields="name,email,picture"
-            callback={(response) => responseFacebook({ response, setIsLogin })}
+            callback={(response) => responseFacebook({ response, ...props })}
             onFailure={(err) => {
               console.log(err);
             }}
