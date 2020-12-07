@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import LoginPage from "./screens/LoginPage";
 import RegisterPage from "./screens/RegisterPage";
 import PublicPage from "./screens/PublicPage";
+import ProfilePage from "./screens/ProfilePage";
 
 //style
 import "./App.css";
@@ -47,6 +48,12 @@ export default function App() {
         <Switch>
           <Route path="/register">
             {token ? <PublicPage /> : <RegisterPage setIsLogin={setIsLogin} />}
+          </Route>
+          <Route path="/dashboard">
+            {token ? <PublicPage /> : <RegisterPage setIsLogin={setIsLogin} />}
+          </Route>
+          <Route path="/profile">
+            {token ? <ProfilePage /> : <RegisterPage setIsLogin={setIsLogin} />}
           </Route>
           <Route path="/login">
             {token ? <PublicPage /> : <LoginPage setIsLogin={setIsLogin} />}
