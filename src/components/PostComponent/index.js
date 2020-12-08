@@ -17,7 +17,7 @@ function PostCoponent({ post }) {
         />
         <div>
           <h2>{post.username ? post.username : post.owner}</h2>
-          <p>{post.follower ? post.follower : "NoF"} Follower</p>
+          <p>{post.follower ? post.follower : "0"} Follower</p>
         </div>
       </header>
       <main>

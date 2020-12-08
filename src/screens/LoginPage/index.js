@@ -15,6 +15,7 @@ function LoginPage(props) {
   const login = (e) => {
     e.preventDefault();
     signInWEP({ email, password, ...props });
+    props.setPath("/dashboard");
   };
   return (
     <div className="column">

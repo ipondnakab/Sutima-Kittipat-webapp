@@ -1,6 +1,6 @@
 import React from "react";
 import "./headerProfile.css";
-export default function HeaderProfile() {
+export default function HeaderProfile({ userData }) {
   const data = {
     coverImg: "https://wallpaperaccess.com/full/175640.jpg",
     name: "TestUser",
@@ -12,21 +12,23 @@ export default function HeaderProfile() {
       <div
         className={"cover-img-div"}
         style={{
-          backgroundImage: `url(${data.coverImg})`,
+          backgroundImage: `url(${userData.imageCover})`,
         }}
       ></div>
       <div className={"infomation-user"}>
         <img
           alt={"profile image"}
           src={
-            data.img
-              ? data.img
+            userData.imageProfile
+              ? userData.imageProfile
               : "https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg"
           }
         />
         <div>
-          <h2>{data.name}</h2>
-          <p>{data.numberOfFollower} Follower</p>
+          <h2>{userData.username}</h2>
+          <p>
+            {userData.numberOfFollower ? userData.numberOfFollower : 0} Follower
+          </p>
         </div>
       </div>
     </div>

@@ -2,58 +2,16 @@ import React, { Component } from "react";
 import "./createPost.css";
 import iconProfile from "./man.svg";
 import postImage from "./bg2.jpg";
-import Axios from "axios";
-
-// function PostComponent({ profile }) {
-//   return (
-//     <article className="post-component">
-//       <header>
-//         <img src={profile ? profile.img : iconProfile} alt="profile" />
-//         <div>
-//           <h2>{profile ? profile.name : "nameUser"}</h2>
-//           <p>{profile ? profile.follower : "NoF"}</p>
-//         </div>
-//       </header>
-//       <main className={"main-create-post"}>
-//         <div>
-//           <input type="text" id="discription-post-input" />
-//         </div>
-//         <div>
-//           <span
-//             style={{
-//               display: "flex",
-//               justifyContent: "center",
-//               alignItems: "center",
-//               width: "48px",
-//               height: "48px",
-//             }}
-//           >
-//             <h1 style={{ margin: 0, fontSize: 32, fontWeight: "lighter" }}>
-//               +
-//             </h1>
-//           </span>
-//         </div>
-//       </main>
-//     </article>
-//   );
-// }
-// export default PostComponent;
+import axios from "axios";
 
 export default class PostComponent extends Component {
   fileObj = [];
   fileArray = [];
-
   constructor(props) {
     super(props);
     this.state = {
       file: [],
-      profile: {
-        imageCover: "https://wallpaperaccess.com/full/175640.jpg",
-        username: "TestUser",
-        follower: 0,
-        imageProfile:
-          "https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg",
-      },
+      profile: props.userData,
       discription: "",
       price: null,
       isSale: false,
@@ -76,29 +34,29 @@ export default class PostComponent extends Component {
     if (!this.state.file[0]) {
       return;
     }
-    this.props.setTem([
-      {
-        ...this.state.profile,
-        imageUrl: this.state.file[0] ? this.state.file[0] : undefined,
-        body: this.state.discription,
-        date: new Date().toISOString(),
-        isSale: this.state.isSale,
-        price: this.state.price,
-      },
-      ...this.props.tem,
-    ]);
-    this.fileArray = [];
-    this.setState({ file: [], discription: "" });
-    Axios.post("http://localhost:5001/farmacro-af287/asia-east2/api/posts/", {
+
+    const newPost = {
       ...this.state.profile,
       imageUrl: this.state.file[0] ? this.state.file[0] : undefined,
       body: this.state.discription,
       date: new Date().toISOString(),
       isSale: this.state.isSale,
       price: this.state.price,
-    })
-      .then((res) => console.log(res))
+    };
+    this.props.setTem([newPost, ...this.props.tem]);
+    axios
+      .post(
+        `https://asia-east2-farmacro-af287.cloudfunctions.net/api/posts/`,
+        newPost
+      )
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      })
       .catch((err) => console.log(err));
+
+    this.fileArray = [];
+    this.setState({ file: [], discription: "" });
   }
 
   onChangeDiscription(e) {
@@ -130,9 +88,7 @@ export default class PostComponent extends Component {
                 : "nameUser"}
             </h2>
             <p>
-              {this.state.profile.follower
-                ? this.state.profile.follower
-                : this.state.profile.follower}{" "}
+              {this.state.profile.follower ? this.state.profile.follower : 0}{" "}
               Follower
             </p>
           </div>
