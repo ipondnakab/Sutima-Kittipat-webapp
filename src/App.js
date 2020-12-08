@@ -11,6 +11,7 @@ import LoginPage from "./screens/LoginPage";
 import RegisterPage from "./screens/RegisterPage";
 import PublicPage from "./screens/PublicPage";
 import ProfilePage from "./screens/ProfilePage";
+import MarketPage from "./screens/MarketPage";
 
 //style
 import "./App.css";
@@ -47,7 +48,11 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/register">
-            {token ? <PublicPage /> : <RegisterPage setIsLogin={setIsLogin} />}
+            {token ? (
+              <PublicPage isLogin={isLogin} />
+            ) : (
+              <RegisterPage setIsLogin={setIsLogin} />
+            )}
           </Route>
           <Route path="/dashboard">
             {token ? <PublicPage /> : <RegisterPage setIsLogin={setIsLogin} />}
@@ -55,11 +60,14 @@ export default function App() {
           <Route path="/profile">
             {token ? <ProfilePage /> : <RegisterPage setIsLogin={setIsLogin} />}
           </Route>
+          <Route path="/market">
+            {token ? <MarketPage /> : <RegisterPage setIsLogin={setIsLogin} />}
+          </Route>
           <Route path="/login">
             {token ? <PublicPage /> : <LoginPage setIsLogin={setIsLogin} />}
           </Route>
           <Route path="/">
-            <PublicPage />
+            {token ? <PublicPage /> : <LoginPage setIsLogin={setIsLogin} />}
           </Route>
         </Switch>
       </div>
@@ -97,9 +105,10 @@ const MenuNavbarOnLogin = ({ currentPath, setPath, setIsLogin }) => {
 
   return (
     <div>
-      {listMenu.map((item) => {
+      {listMenu.map((item, key) => {
         return (
           <Link
+            key={key}
             style={{
               cursor: "pointer",
               fontSize: "1.5rem",

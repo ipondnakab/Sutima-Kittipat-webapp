@@ -66,6 +66,7 @@
 .post-component > footer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   border-top: 1px #eee solid;
   border-bottom: 1px #eee solid;
   margin: 0 24px;
@@ -87,4 +88,10 @@
 
 .post-component > footer > .post-footer-left > p:not(:last-child) {
   border-right: 1px #eee solid;
+}
+
+.post-component > footer > .post-footer-right {
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-end;
 }

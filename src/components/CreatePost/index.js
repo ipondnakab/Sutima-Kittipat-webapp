@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./createPost.css";
 import iconProfile from "./man.svg";
 import postImage from "./bg2.jpg";
+import Axios from "axios";
 
 // function PostComponent({ profile }) {
 //   return (
@@ -47,12 +48,15 @@ export default class PostComponent extends Component {
     this.state = {
       file: [],
       profile: {
-        coverImg: "https://wallpaperaccess.com/full/175640.jpg",
-        name: "TestUser",
+        imageCover: "https://wallpaperaccess.com/full/175640.jpg",
+        username: "TestUser",
         follower: 0,
-        img: "https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg",
+        imageProfile:
+          "https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg",
       },
       discription: "",
+      price: null,
+      isSale: false,
     };
     this.uploadMultipleFiles = this.uploadMultipleFiles.bind(this);
     this.uploadFiles = this.uploadFiles.bind(this);
@@ -64,41 +68,66 @@ export default class PostComponent extends Component {
     for (let i = 0; i < this.fileObj[0].length; i++) {
       this.fileArray.push(URL.createObjectURL(this.fileObj[0][i]));
     }
-
     this.setState({ file: this.fileArray });
   }
 
   uploadFiles(e) {
     e.preventDefault();
+    if (!this.state.file[0]) {
+      return;
+    }
     this.props.setTem([
       {
-        profile: this.state.profile,
-        post: {
-          img: this.state.file[0] ? this.state.file[0] : undefined,
-          detail: this.state.discription,
-        },
+        ...this.state.profile,
+        imageUrl: this.state.file[0] ? this.state.file[0] : undefined,
+        body: this.state.discription,
+        date: new Date().toISOString(),
+        isSale: this.state.isSale,
+        price: this.state.price,
       },
       ...this.props.tem,
     ]);
     this.fileArray = [];
     this.setState({ file: [], discription: "" });
+    Axios.post("http://localhost:5001/farmacro-af287/asia-east2/api/posts/", {
+      ...this.state.profile,
+      imageUrl: this.state.file[0] ? this.state.file[0] : undefined,
+      body: this.state.discription,
+      date: new Date().toISOString(),
+      isSale: this.state.isSale,
+      price: this.state.price,
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
 
   onChangeDiscription(e) {
     this.setState({ discription: e.target.value });
   }
+  onChangePrice(e) {
+    this.setState({ price: e.target.value });
+  }
 
+  onChangeIsSale(e) {
+    this.setState({ isSale: !this.state.isSale });
+  }
   render() {
     return (
       <article className="create-post-component">
         <header>
           <img
-            src={this.state.profile.img ? this.state.profile.img : iconProfile}
+            src={
+              this.state.profile.imageProfile
+                ? this.state.profile.imageProfile
+                : iconProfile
+            }
             alt="profile"
           />
           <div>
             <h2>
-              {this.state.profile.name ? this.state.profile.name : "nameUser"}
+              {this.state.profile.username
+                ? this.state.profile.username
+                : "nameUser"}
             </h2>
             <p>
               {this.state.profile.follower
@@ -196,8 +225,48 @@ export default class PostComponent extends Component {
             </div>
           </form>
         </main>
-        <footer style={{ display: "flex", justifyContent: "flex-end" }}>
-          <button onClick={this.uploadFiles}>Post</button>
+        <footer
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            {this.state.isSale ? (
+              <input
+                type="text"
+                id="price-input"
+                style={{
+                  width: "90%",
+                  justifySelf: "center",
+                  alignSelf: "center",
+                }}
+                placeholder="Price"
+                onChange={this.onChangePrice.bind(this)}
+                value={this.state.price}
+              />
+            ) : (
+              <p>Sale&nbsp;&nbsp;</p>
+            )}
+            <label class="switch">
+              <input
+                type="checkbox"
+                onChange={this.onChangeIsSale.bind(this)}
+              />
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <button
+            style={{
+              backgroundColor:
+                this.state.file.length === 0 ? "#777" : "skyblue",
+              color: "white",
+            }}
+            onClick={this.uploadFiles}
+          >
+            Post
+          </button>
         </footer>
       </article>
     );

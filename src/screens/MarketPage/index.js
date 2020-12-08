@@ -1,8 +1,8 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useState } from "react";
 import PostComponent from "../../components/PostComponent";
 import CreatePost from "../../components/CreatePost";
-import axios from "axios";
-function PublicPage() {
+
+function MarketPage() {
   let [tem, setTem] = useState([
     {
       imageProfile:
@@ -13,6 +13,8 @@ function PublicPage() {
         "https://www.treehugger.com/thmb/bM_zeJcC8UpFkNa39UK69dfoT2w=/735x0/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2017__01__cow-in-pasture-crop2-3b8cdbd62aee45f6ab8d49228fa85272.jpg",
       body:
         "Ipsum is simply dummy text of the printing and typesetting industry. Industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      isSale: true,
+      price: 54000,
     },
     {
       imageProfile:
@@ -23,6 +25,8 @@ function PublicPage() {
         "https://cdn.britannica.com/55/174255-050-526314B6/brown-Guernsey-cow.jpg",
       body:
         "simply dummy text of the printing and typesetting industry. Industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      isSale: true,
+      price: 38000,
     },
     {
       imageProfile:
@@ -33,15 +37,10 @@ function PublicPage() {
         "https://dkpo4ygqb6rh6.cloudfront.net/COWSIGNALS_COM/imageresized/4023/8248646f7e35630b2bb4bf597c22b73a/2560_1440_75_fixedjpg/cowsignals_2560px.jpg",
       body:
         "text of the printing and typesetting industry. Industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      isSale: true,
+      price: 48000,
     },
   ]);
-  useEffect(() => getPost(), []);
-  const getPost = () => {
-    axios
-      .get("http://localhost:5001/farmacro-af287/asia-east2/api/posts/")
-      .then((res) => setTem(res.data))
-      .catch((err) => console.log(err));
-  };
 
   return (
     <div
@@ -60,9 +59,7 @@ function PublicPage() {
           alignItems: "center",
           width: "100%",
         }}
-      >
-        <CreatePost setTem={setTem} tem={tem} />
-      </div>
+      ></div>
       {tem.map((val, key) => {
         return (
           <div
@@ -82,4 +79,4 @@ function PublicPage() {
   );
 }
 
-export default PublicPage;
+export default MarketPage;
