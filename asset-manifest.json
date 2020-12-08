@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Sutima-Kittipat-webapp/static/css/main.31952bbb.chunk.css",
-    "main.js": "/Sutima-Kittipat-webapp/static/js/main.62b392d5.chunk.js",
-    "main.js.map": "/Sutima-Kittipat-webapp/static/js/main.62b392d5.chunk.js.map",
+    "main.css": "/Sutima-Kittipat-webapp/static/css/main.c134c032.chunk.css",
+    "main.js": "/Sutima-Kittipat-webapp/static/js/main.5bc44428.chunk.js",
+    "main.js.map": "/Sutima-Kittipat-webapp/static/js/main.5bc44428.chunk.js.map",
     "runtime-main.js": "/Sutima-Kittipat-webapp/static/js/runtime-main.114291fc.js",
     "runtime-main.js.map": "/Sutima-Kittipat-webapp/static/js/runtime-main.114291fc.js.map",
-    "static/js/2.2820f487.chunk.js": "/Sutima-Kittipat-webapp/static/js/2.2820f487.chunk.js",
-    "static/js/2.2820f487.chunk.js.map": "/Sutima-Kittipat-webapp/static/js/2.2820f487.chunk.js.map",
+    "static/js/2.f168b5ef.chunk.js": "/Sutima-Kittipat-webapp/static/js/2.f168b5ef.chunk.js",
+    "static/js/2.f168b5ef.chunk.js.map": "/Sutima-Kittipat-webapp/static/js/2.f168b5ef.chunk.js.map",
     "index.html": "/Sutima-Kittipat-webapp/index.html",
-    "static/css/main.31952bbb.chunk.css.map": "/Sutima-Kittipat-webapp/static/css/main.31952bbb.chunk.css.map",
-    "static/js/2.2820f487.chunk.js.LICENSE.txt": "/Sutima-Kittipat-webapp/static/js/2.2820f487.chunk.js.LICENSE.txt",
+    "static/css/main.c134c032.chunk.css.map": "/Sutima-Kittipat-webapp/static/css/main.c134c032.chunk.css.map",
+    "static/js/2.f168b5ef.chunk.js.LICENSE.txt": "/Sutima-Kittipat-webapp/static/js/2.f168b5ef.chunk.js.LICENSE.txt",
     "static/media/bg2.16afb43f.jpg": "/Sutima-Kittipat-webapp/static/media/bg2.16afb43f.jpg",
     "static/media/man.70450708.svg": "/Sutima-Kittipat-webapp/static/media/man.70450708.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.114291fc.js",
-    "static/js/2.2820f487.chunk.js",
-    "static/css/main.31952bbb.chunk.css",
-    "static/js/main.62b392d5.chunk.js"
+    "static/js/2.f168b5ef.chunk.js",
+    "static/css/main.c134c032.chunk.css",
+    "static/js/main.5bc44428.chunk.js"
   ]
 }
